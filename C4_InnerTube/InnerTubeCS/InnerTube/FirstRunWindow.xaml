@@ -1,0 +1,14 @@
+﻿<Window x:Class="InnerTube.FirstRunWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Setup InnerTube" Height="335" Width="361"
+    Background="{DynamicResource SilverGradient}" Icon="/InnerTube;component/images/innertube_icon_sml.png">
+    <Grid>
+        <CheckBox Height="16" HorizontalAlignment="Left" IsEnabled="False" Margin="10,65,0,0" Name="chkZune" VerticalAlignment="Top" Width="120">Sync to Zune</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" IsEnabled="False" Margin="10,97,0,0" Name="chkiTunes" VerticalAlignment="Top" Width="120">Sync to iTunes</CheckBox>
+        <Label FontSize="14" FontWeight="Bold" Height="29" Margin="10,10,-34,0" Name="lblFirstRun" VerticalAlignment="Top">Checking installed applications....</Label>
+        <Button IsEnabled="False" Margin="129.078,256.338,139.986,17.271" Name="btnOK" Click="btnOK_Click">OK</Button>
+        <Label Margin="13.5,130,0,104" Name="lblLocation" HorizontalAlignment="Left" Width="145.44">Videos will be saved to:</Label>
+        <TextBlock Background="BurlyWood" Height="19" Margin="18,151.803,9,0" Name="txtLocation" Text="C:\Users\Dan\Videos\" VerticalAlignment="Top" /><Label Height="28" Margin="18,0,119.976,84.537" Name="lblWorkingDir" VerticalAlignment="Bottom">InnerTube will save thumbnails to:</Label><TextBlock Background="BurlyWood" Foreground="Black" Height="19" IsEnabled="False" Margin="18,0,9,68.175" Name="txtSubDir" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

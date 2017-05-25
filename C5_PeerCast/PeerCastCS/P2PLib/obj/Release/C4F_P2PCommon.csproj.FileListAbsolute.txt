@@ -1,0 +1,9 @@
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Release\C4F_P2PCommon.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Release\C4F_P2PCommon.pdb
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Release\Interop.Shell32.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Release\ResolveAssemblyReference.cache
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Release\Interop.Shell32.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Release\C4F_P2PCommon.csproj.ResolveComReference.cache
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Release\C4F_P2PCommon.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Release\C4F_P2PCommon.pdb
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Release\C4F_P2PCommon.xml

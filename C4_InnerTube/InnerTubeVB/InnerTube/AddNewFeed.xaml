@@ -1,0 +1,23 @@
+<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="InnerTube.AddNewFeed"
+    Title="AddNewItem" Height="400" Width="500" Loaded="Window_Loaded"
+    Background="{DynamicResource SilverGradient}" Icon="/InnerTube;component/images/innertube_icon_sml.png">
+    <Grid>
+        <CheckBox Height="16" Margin="27,72,0,0" x:Name="chkMostViewed" VerticalAlignment="Top" HorizontalAlignment="Left" Width="148" Content="Most Viewed Over Time"/>
+        <CheckBox HorizontalAlignment="Left" Margin="27,106,0,0" x:Name="chkTopRated" Width="148" Height="16" VerticalAlignment="Top" Content="Top Rated Over Time"/>
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="27,142,0,0" x:Name="chkTopFavorites" VerticalAlignment="Top" Width="148" Content="Top Favorited Over Time"/>
+        <CheckBox HorizontalAlignment="Left" Margin="27,176,0,170" x:Name="chkFavByUser" Width="148" Content="Favorites By Username"/>
+        <TextBox Margin="212,173,146,166" x:Name="FavUser" Text="danielfe"/>
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="27,0,0,136" x:Name="chkSubUser" VerticalAlignment="Bottom" Width="172" Content="Subscriptions By Username"/>
+        <TextBox Height="23" Margin="212,0,146,132" x:Name="SubUser" VerticalAlignment="Bottom" Text="danielfe"/>
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="27,0,0,104" x:Name="chkSearch" VerticalAlignment="Bottom" Width="172" Content="Custom Search"/>
+        <TextBox Height="23" Margin="212,0,146,100" x:Name="Search" VerticalAlignment="Bottom" Text="Microsoft"/>
+        <ComboBox Height="23" Margin="212,72,146,0" x:Name="ViewTime" VerticalAlignment="Top" ItemsSource="{Binding}" />
+        <ComboBox Height="23" Margin="212,106,146,0" x:Name="RateTime" VerticalAlignment="Top" ItemsSource="{Binding}"  />
+        <ComboBox Height="23" Margin="212,142,146,0" x:Name="FavTime" VerticalAlignment="Top" ItemsSource="{Binding}" />
+        <Button Height="23" Margin="193,0,210,36" Name="btnAddFeeds" VerticalAlignment="Bottom" Click="btnAddFeeds_Click">Add</Button>
+        <Label Height="28" Margin="120,19,132,0" Name="label1" VerticalAlignment="Top">Add YouTube Subscriptions</Label>
+    </Grid>
+</Window>

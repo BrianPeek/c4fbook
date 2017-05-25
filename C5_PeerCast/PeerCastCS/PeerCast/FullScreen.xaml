@@ -1,0 +1,6 @@
+﻿<Window x:Class="PeerCast.FullScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="FullScreen" Height="300" Width="300" WindowState="Maximized" Icon="/PeerCast;component/icon.png" Background="Black">
+        <MediaElement Name="MediaPlayer" Height="Auto" Width="Auto" LoadedBehavior="Manual"></MediaElement>
+</Window>

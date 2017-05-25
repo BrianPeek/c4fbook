@@ -1,0 +1,402 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+  <Script file="Frame.lua" />
+  <Button name="ScrollItemTemplate" virtual="true">
+    <Size>
+      <AbsDimension x="150" y="16" />
+    </Size>
+    <Layers />
+    <Frames/>
+    <NormalFont style="GameFontNormal" font="Fonts\FRIZQT__.TTF" justifyH="LEFT">
+      <Color r="1" g="0.82" b="0" />
+      <FontHeight>
+        <AbsValue val="12" />
+      </FontHeight>
+      <Shadow>
+        <Offset>
+          <AbsDimension x="1" y="-1" />
+        </Offset>
+        <Color r="0" g="0" b="0" />
+      </Shadow>
+    </NormalFont>
+    <HighlightFont style="GameFontHighlight" font="Fonts\FRIZQT__.TTF" justifyH="LEFT">
+      <Color r="1" g="1" b="1" />
+      <FontHeight>
+        <AbsValue val="12" />
+      </FontHeight>
+      <Shadow>
+        <Offset>
+          <AbsDimension x="1" y="-1" />
+        </Offset>
+        <Color r="0" g="0" b="0" />
+      </Shadow>
+    </HighlightFont>
+  </Button>
+  <Frame name="FeedReaderFrame" parent="UIParent" toplevel="true" movable="true" enableMouse="true" resizable="true">
+    <Size>
+      <AbsDimension x="800" y="300" />
+    </Size>
+    <Anchors>
+      <Anchor point="CENTER">
+        <Offset x="-8" y="65" />
+      </Anchor>
+    </Anchors>
+    <ResizeBounds>
+      <minResize>
+        <AbsDimension x="650" y="250"/>
+      </minResize>
+    </ResizeBounds>
+    <TitleRegion setAllPoints="true">
+      <Size>
+        <AbsDimension y="30"/>
+      </Size>
+      <Anchors>
+        <Anchor point="TOPLEFT"/>
+        <Anchor point="TOPRIGHT"/>
+      </Anchors>
+    </TitleRegion>
+    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+      <BackgroundInsets>
+        <AbsInset left="11" right="12" top="12" bottom="11" />
+      </BackgroundInsets>
+      <TileSize>
+        <AbsValue val="32" />
+      </TileSize>
+      <EdgeSize>
+        <AbsValue val="32" />
+      </EdgeSize>
+    </Backdrop>
+    <Layers>
+      <Layer level="OVERLAY">
+        <FontString name="CaptionFontString" inherits="GameFontNormal" text="World of Warcraft Feed Reader" justifyH="LEFT">
+          <Size>
+            <AbsDimension x="570" y="15" />
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset x="15" y="-15" />
+            </Anchor>
+            <Anchor point="TOPRIGHT">
+              <Offset x="-15" y="-15" />
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="CloseButton" inherits="UIPanelCloseButton">
+        <Anchors>
+          <Anchor point="TOPRIGHT">
+            <Offset x="-4" y="-5" />
+          </Anchor>
+        </Anchors>
+        <Layers />
+        <Frames />
+      </Button>
+      <Frame name="FeedsFrame">
+        <Size>
+          <AbsDimension x="277" y="177" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset x="15" y="-30" />
+          </Anchor>
+          <Anchor point="BOTTOMRIGHT" relativePoint="TOP">
+            <Offset x="-2" y="-130" />
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background.blp" edgeFile="Interface\Tooltips\UI-Tooltip-Border.blp" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="4" right="4" top="4" bottom="4" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+        </Backdrop>
+        <Layers />
+        <Frames>
+          <ScrollFrame name="FeedsScrollFrame" inherits="FauxScrollFrameTemplate">
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset x="8" y="-8" />
+              </Anchor>
+              <Anchor point="BOTTOMRIGHT">
+                <Offset x="-30" y="8" />
+              </Anchor>
+            </Anchors>
+            <Layers/>
+            <Frames/>
+            <Scripts>
+              <OnVerticalScroll>FauxScrollFrame_OnVerticalScroll(self, offset, 16, UpdateFeeds);</OnVerticalScroll>
+            </Scripts>
+          </ScrollFrame>
+          <Button name="FeedButton1" inherits="ScrollItemTemplate" text="Feed1">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedsScrollFrame" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedsScrollFrame" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedButton_Clicked(1);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedButton2" inherits="ScrollItemTemplate" text="Feed2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedButton1" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedButton1" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedButton_Clicked(2);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedButton3" inherits="ScrollItemTemplate" text="Feed3">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedButton2" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedButton2" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedButton_Clicked(3);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedButton4" inherits="ScrollItemTemplate" text="Feed4">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedButton3" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedButton3" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedButton_Clicked(4);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedButton5" inherits="ScrollItemTemplate" text="Feed5">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedButton4" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedButton4" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedButton_Clicked(5);
+              </OnClick>
+            </Scripts>
+          </Button>
+        </Frames>
+      </Frame>
+      <Frame name="FeedItemsFrame">
+        <Size>
+          <AbsDimension x="232" y="125" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPRIGHT">
+            <Offset x="-15" y="-30" />
+          </Anchor>
+          <Anchor point="BOTTOMLEFT" relativePoint="TOP">
+            <Offset x="2" y="-130" />
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background.blp" edgeFile="Interface\Tooltips\UI-Tooltip-Border.blp" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="4" right="4" top="4" bottom="4" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+        </Backdrop>
+        <Layers/>
+        <Frames>
+          <ScrollFrame name="FeedItemsScrollFrame" inherits="FauxScrollFrameTemplate">
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset x="8" y="-8" />
+              </Anchor>
+              <Anchor point="BOTTOMRIGHT">
+                <Offset x="-30" y="8" />
+              </Anchor>
+            </Anchors>
+            <Layers />
+            <Frames/>
+            <Scripts>
+              <OnVerticalScroll>FauxScrollFrame_OnVerticalScroll(self, offset, 16, UpdateFeedItems);</OnVerticalScroll>
+            </Scripts>
+          </ScrollFrame>
+          <Button name="FeedItemButton1" inherits="ScrollItemTemplate" text="FeedItem1">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedItemsScrollFrame" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedItemsScrollFrame" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedItemButton_Clicked(1);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedItemButton2" inherits="ScrollItemTemplate" text="FeedItem2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedItemButton1" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedItemButton1" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedItemButton_Clicked(2);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedItemButton3" inherits="ScrollItemTemplate" text="FeedItem3">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedItemButton2" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedItemButton2" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedItemButton_Clicked(3);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedItemButton4" inherits="ScrollItemTemplate" text="FeedItem4">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedItemButton3" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedItemButton3" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedItemButton_Clicked(4);
+              </OnClick>
+            </Scripts>
+          </Button>
+          <Button name="FeedItemButton5" inherits="ScrollItemTemplate" text="FeedItem5">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="FeedItemButton4" relativePoint="BOTTOMLEFT" />
+              <Anchor point="TOPRIGHT" relativeTo="FeedItemButton4" relativePoint="BOTTOMRIGHT" />
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>
+                FeedItemButton_Clicked(5);
+              </OnClick>
+            </Scripts>
+          </Button>
+        </Frames>
+      </Frame>
+      <Frame name="SummaryFrame">
+        <Size>
+          <AbsDimension x="770" y="151" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="FeedsFrame" relativePoint="BOTTOMLEFT">
+            <Offset x="0" y="-4" />
+          </Anchor>
+          <Anchor point="BOTTOMRIGHT">
+            <Offset x="-15" y="15" />
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background.blp" edgeFile="Interface\Tooltips\UI-Tooltip-Border.blp" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="4" right="4" top="4" bottom="4" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+        </Backdrop>
+        <Layers>
+          <Layer level="OVERLAY">
+            <FontString name="SummaryFontString" inherits="GameFontNormalSmall" text="Summary" justifyV="TOP" justifyH="LEFT">
+              <Size>
+                <AbsDimension x="738" y="94" />
+              </Size>
+              <Anchors>
+                <Anchor point="TOPLEFT">
+                  <Offset x="16" y="-16" />
+                </Anchor>
+                <Anchor point="BOTTOMRIGHT">
+                  <Offset x="-16" y="41" />
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Frames>
+          <Button name="RefreshButton" inherits="UIPanelButtonTemplate" text="Refresh">
+            <Size>
+              <AbsDimension x="75" y="23" />
+            </Size>
+            <Anchors>
+              <Anchor point="BOTTOMRIGHT">
+                <Offset x="-10" y="10" />
+              </Anchor>
+            </Anchors>
+            <Layers />
+            <Frames />
+            <Scripts>
+              <OnClick>ReloadUI()</OnClick>
+            </Scripts>
+          </Button>
+        </Frames>
+        <Scripts />
+      </Frame>
+      <Frame name="FeedReaderRightSizerFrame" enableMouse="true">
+        <Size>
+          <AbsDimension x="20" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="BOTTOMRIGHT">
+            <Offset x="2" y="-2" />
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnMouseDown>FeedReaderFrame:StartSizing("BOTTOMRIGHT");</OnMouseDown>
+          <OnMouseUp>FeedReaderFrame:StopMovingOrSizing();</OnMouseUp>
+        </Scripts>
+      </Frame>
+      <Frame name="FeedReaderLeftSizerFrame" enableMouse="true">
+        <Size>
+          <AbsDimension x="20" y="20" />
+        </Size>
+        <Anchors>
+          <Anchor point="BOTTOMLEFT">
+            <Offset x="2" y="-2" />
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnMouseDown>FeedReaderFrame:StartSizing("BOTTOMLEFT");</OnMouseDown>
+          <OnMouseUp>FeedReaderFrame:StopMovingOrSizing();</OnMouseUp>
+        </Scripts>
+      </Frame>
+    </Frames>
+    <Scripts>
+      <OnLoad>FeedReaderFrame_OnLoad();</OnLoad>
+      <OnEvent>FeedReaderFrame_OnEvent();</OnEvent>
+    </Scripts>
+  </Frame>
+</Ui>

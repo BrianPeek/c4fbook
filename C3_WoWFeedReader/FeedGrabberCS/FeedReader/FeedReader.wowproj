@@ -1,0 +1,41 @@
+﻿<Project DefaultTargets="Deploy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>FeedReader</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1e4cee4a-78b5-4cde-987a-3470c8761338}</ProjectGuid>
+    <AssemblyName>FeedReader</AssemblyName>
+    <RootNamespace>FeedReader</RootNamespace>
+    <WowPath>D:\World of Warcraft\</WowPath>
+    <AddonTitle>FeedReader</AddonTitle>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WowAddonStudio\2.0\WowAddonStudio.targets" />
+  <ItemGroup>
+    <Content Include="FeedReader.toc">
+      <SubType>TableOfContents</SubType>
+    </Content>
+    <Content Include="Frame.xml">
+      <SubType>Frame</SubType>
+    </Content>
+    <Content Include="Frame.lua">
+      <SubType>Code</SubType>
+      <DependentUpon>Frame.xml</DependentUpon>
+    </Content>
+    <Content Include="Slash.lua">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it. 
+		
+	<Target Name="BeforeClean"></Target>
+	<Target Name="AfterClean"></Target>
+	<Target Name="BeforeRebuild"></Target>
+	<Target Name="AfterRebuild"></Target>
+	<Target Name="BeforeDeploy"></Target>
+	<Target Name="AfterDeploy"></Target>
+	-->
+</Project>

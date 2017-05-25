@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# WowAddonStudio Solution File, Format Version 10.00
+Project("{E6E1D386-69D8-4755-9E61-0950293915FC}") = "FeedReader", "FeedReader.wowproj", "{1E4CEE4A-78B5-4CDE-987A-3470C8761338}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Any CPU = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E4CEE4A-78B5-4CDE-987A-3470C8761338}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{1E4CEE4A-78B5-4CDE-987A-3470C8761338}.Default|Any CPU.Build.0 = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

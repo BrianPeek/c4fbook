@@ -1,0 +1,185 @@
+﻿   <Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Util="clr-namespace:InnerTube"    
+    x:Class="InnerTube.MainWindow"
+    Title="InnerTube" Height="790.158" Width="928.519" HorizontalAlignment="Center" 
+    VerticalAlignment="Center"  Loaded="Window_Loaded" 
+    Background="{DynamicResource SilverGradient}" Icon="/InnerTube;component/images/innertube_icon_sml.png">
+    <Window.Resources>        
+    	<ResourceDictionary>
+           <!-- Value Converters for databinding -->
+    		<Util:ConverterImage x:Key="img" />        
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="Util:MainWindow.AddFeedCommand" Executed="AddFeed"/>
+        <CommandBinding Command="Util:MainWindow.UpdateFeedCommand" Executed="UpdateFeed"/>
+        <CommandBinding Command="Util:MainWindow.DownloadFeedCommand" Executed="DownloadFeed"/>
+    </Window.CommandBindings>
+        <DockPanel>
+        <!-- Menus -->
+        <Menu DockPanel.Dock="Top"  x:Name="MenuFile" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="25" >
+            <MenuItem Header="File">
+                <MenuItem x:Name="MenuExit" Header="Exit" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="MenuAction" Header="Tools">
+                <!-- Menu:Add Feed -->
+                <MenuItem x:Name="MenuAddFeed" Header="Add Feed..." Command="Util:MainWindow.AddFeedCommand">
+                    <MenuItem.Icon>
+                        <Image Source="images/add.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                
+                <!-- Menu:Update Feed -->
+                <MenuItem x:Name="MenuUpdateFeed" Header="Refresh Feeds" Command="Util:MainWindow.UpdateFeedCommand" >
+                    <MenuItem.Icon>
+                        <Image Source="images/arrow_refresh.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                
+                <!-- Menu:Start Downloads -->
+                <MenuItem x:Name="MenuDownload" Header="Start Downloads..." Command="Util:MainWindow.DownloadFeedCommand">
+                    <MenuItem.Icon>
+                        <Image Source="images/resultset_next.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>                
+            </MenuItem>
+        </Menu>
+        
+        <ToolBar DockPanel.Dock="Top" x:Name="Toolbar" Height="40" Background="{DynamicResource SilverGradient}">
+            <!-- Toolbar: Add Feed -->
+            <Button Command="Util:MainWindow.AddFeedCommand">
+                <StackPanel Orientation="Horizontal">
+                <Image Source="images/add.png"  Height="16"></Image>
+                    <TextBlock Margin="2" VerticalAlignment="Center">Add Feed</TextBlock>    
+                </StackPanel>
+            </Button>
+            <!-- Toolbar: Update Feed -->
+            <Button Command="Util:MainWindow.UpdateFeedCommand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="images/arrow_refresh.png"  Height="16"></Image>
+                    <TextBlock Margin="2" VerticalAlignment="Center">Refresh Feeds</TextBlock>
+                </StackPanel>
+            </Button>
+            
+            <!-- Toolbar: Start Downloads -->
+            <Button Command="Util:MainWindow.DownloadFeedCommand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="images/resultset_next.png"  Height="16"></Image>
+                    <TextBlock Margin="2" VerticalAlignment="Center">Start Downloads</TextBlock>
+                </StackPanel>
+            </Button>
+            
+        </ToolBar>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="188*"/>
+                <ColumnDefinition Width="247*"/>
+                <ColumnDefinition Width="471*"/>
+            </Grid.ColumnDefinitions>        
+            <GridSplitter Background="Gray" Grid.Column="1" HorizontalAlignment="Stretch" />
+            <GridSplitter Background="gray" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Margin="0,0,0.288,0" Width="0.27" HorizontalAlignment="Right">
+      
+                </GridSplitter>
+
+
+
+                <!--First Column-->	
+        	<ListBox Grid.Column="0" x:Name="feedList" IsSynchronizedWithCurrentItem="True"  ItemsSource="{Binding}"  Background="{x:Null}">
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Click="DeleteFeed" CommandParameter="{Binding Path=/}"  Header="Delete Feed" >
+                            <MenuItem.Icon>
+                                <Image Source="images/cross.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        </ContextMenu>
+                </ListBox.ContextMenu>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                        <TextBlock FontWeight="Bold" Text="{Binding Path=FeedName}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>		
+		
+
+
+
+        <!--Second Column-->
+        <ListBox Grid.Column="1"  IsSynchronizedWithCurrentItem="True" 
+                 ItemsSource="{Binding Path=FeedVideos}" Name="VideoList" Background="{x:Null}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                <StackPanel Orientation="Horizontal">
+                            <StackPanel.ContextMenu>
+                                <ContextMenu Name="mnuDeleteVideo">
+                                    <MenuItem Click="DeleteVideo" CommandParameter="{Binding}"  
+                                              Header="Delete" InputGestureText="Del" >
+                                            <MenuItem.Icon>
+                                                <Image Source="images/cross.png"></Image>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </ContextMenu>
+                            </StackPanel.ContextMenu>
+                    <Image Margin="2,2,2,2" Source="{Binding Path=DownloadedImage, 
+                        Converter={StaticResource img} }" 
+                        Width="48" Height="48" VerticalAlignment="Center"></Image>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock  FontWeight="Bold" Text="{Binding Path=Title}" 
+                                    TextTrimming="WordEllipsis"  TextWrapping="Wrap" />
+                        <TextBlock Foreground="White"  Text="{Binding Path=Author}" />
+                    </StackPanel>
+                </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>		
+
+
+        
+        <!-- 3rd Column -->
+        <Canvas Grid.Column="2" Name="canvas1">            
+            <!-- Title -->
+            <TextBlock Text="{Binding Path=FeedVideos/Title}" Name="VideoTitle"  TextAlignment="Center" Height="28.453" Canvas.Left="18.859" Canvas.Top="9.228" Width="438.133" FontSize="16" FontWeight="Bold"></TextBlock>
+            
+            <!-- Video -->
+            <Util:MediaPlayer InnerTubeVideoFile="{Binding Path=FeedVideos/}" x:Name="VideoPlayer" Canvas.Left="18.571" Canvas.Top="47.678" Height="398.342" Width="438.421" />
+                       
+            <!-- Description -->
+            <ScrollViewer Canvas.Left="32.867" Canvas.Top="458.425" Height="86.684" Name="scrollViewer1" Width="424.413">
+                <TextBlock Height="180" Text="{Binding Path=FeedVideos/Description}"   Name="txtDescription" TextDecorations="None" TextWrapping="Wrap" />
+            </ScrollViewer>
+            
+            <!-- Author -->
+            <Label Canvas.Left="46" Canvas.Top="551.777" Height="28.339" Name="lblAuthor" Width="120" HorizontalContentAlignment="Right">Author:</Label>
+            <TextBlock Text="{Binding Path=FeedVideos/Author}"  Canvas.Left="173" Canvas.Top="559.209" Height="20.907" Name="txtAuthor" Width="120" />
+            
+            <!-- Views -->
+            <Label Canvas.Left="46" Canvas.Top="580.116" Height="28.339" Name="lblViews" Width="120" HorizontalContentAlignment="Right">Views:</Label>            
+            <TextBlock Text="{Binding Path=FeedVideos/Views,StringFormat=N0 }"   Name="txtViews" Canvas.Left="173" Canvas.Top="587.548" Height="20.907"  Width="120"/>
+                
+
+                <!-- Average Rating -->
+            <Label Canvas.Left="46" Canvas.Top="610.122" Height="28.339" Name="lblRaters" Width="120" HorizontalContentAlignment="Right">Average Rating:  </Label>            
+            <Util:RatingUserControl StarRating="{Binding Path=FeedVideos/AvgRating}" x:Name="Rating" Canvas.Left="173" Canvas.Top="615.123" Height="16.67"  />
+            
+            
+            <!-- Number of Ratings -->
+            <Label Name="lblNumRating" Canvas.Left="46" Canvas.Top="636.794" Height="28.339" Width="120" HorizontalContentAlignment="Right"># of Ratings:</Label>
+            <TextBlock Text="{Binding Path=FeedVideos/NumRaters, StringFormat=N0}" Name="txtNumRating" Canvas.Left="173" Canvas.Top="641.795" Height="21.671" Width="120" />
+
+            
+            <!-- Publish Date -->
+            <Label Canvas.Left="46" Canvas.Top="660.132" Height="28.339" Name="lblPublished" Width="120" HorizontalContentAlignment="Right">Published:</Label>
+            <TextBlock Text="{Binding Path=FeedVideos/Published}"  Name="txtPublished" Canvas.Left="173" Canvas.Top="665.133" Height="21.671" Width="216" />                                                           
+        </Canvas>
+
+        
+        
+    </Grid>
+   </DockPanel>
+</Window>

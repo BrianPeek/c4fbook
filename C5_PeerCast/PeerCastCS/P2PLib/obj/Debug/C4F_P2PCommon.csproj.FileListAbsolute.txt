@@ -1,0 +1,36 @@
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Debug\C4F_P2PCommon.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Debug\C4F_P2PCommon.pdb
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Debug\C4F_P2PCommon.xml
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\bin\Debug\Interop.Shell32.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Debug\ResolveAssemblyReference.cache
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Debug\Interop.Shell32.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Debug\C4F_P2PCommon.csproj.ResolveComReference.cache
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Debug\C4F_P2PCommon.dll
+C:\PersonifyDesign\P2P\nearFinal\Source\VCS\Common\obj\Debug\C4F_P2PCommon.pdb
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\bin\Debug\C4F_P2PCommon.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\bin\Debug\C4F_P2PCommon.pdb
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\bin\Debug\C4F_P2PCommon.xml
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\bin\Debug\Interop.Shell32.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\obj\Debug\Interop.Shell32.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\obj\Debug\C4F_P2PCommon.csproj.ResolveComReference.cache
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\obj\Debug\C4F_P2PCommon.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\VideoServer\Source\VCS\Common\obj\Debug\C4F_P2PCommon.pdb
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\bin\Debug\C4F_P2PCommon.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\bin\Debug\C4F_P2PCommon.pdb
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\bin\Debug\C4F_P2PCommon.xml
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\bin\Debug\Interop.Shell32.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\obj\Debug\Interop.Shell32.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\obj\Debug\C4F_P2PCommon.csproj.ResolveComReference.cache
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\obj\Debug\C4F_P2PCommon.dll
+C:\Users\Dan\Desktop\Developer\C4F Book\P2P\PeerCast\P2PLib\obj\Debug\C4F_P2PCommon.pdb
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\bin\Debug\C4F_P2PCommon.dll
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\bin\Debug\C4F_P2PCommon.pdb
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\bin\Debug\C4F_P2PCommon.xml
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\bin\Debug\Interop.Shell32.dll
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\obj\Debug\Interop.Shell32.dll
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\obj\Debug\C4F_P2PCommon.csproj.ResolveComReference.cache
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\obj\Debug\C4F_P2PCommon.dll
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\P2P\manifestsetting\PeerCastCS\P2PLib\obj\Debug\C4F_P2PCommon.pdb

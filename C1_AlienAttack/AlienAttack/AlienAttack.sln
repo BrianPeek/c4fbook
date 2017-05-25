@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienAttack", "AlienAttack.csproj", "{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Debug|Zune = Debug|Zune
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+		Release|Zune = Release|Zune
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Debug|x86.ActiveCfg = Debug|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Debug|x86.Build.0 = Debug|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Debug|Zune.ActiveCfg = Debug|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Release|x86.ActiveCfg = Release|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Release|x86.Build.0 = Release|x86
+		{1F5A7D12-AEDA-40F3-AD6B-59C2E4241B28}.Release|Zune.ActiveCfg = Release|x86
+		{17A0A29E-6CBF-4B5D-BE0C-B0AFD88B2B65}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{17A0A29E-6CBF-4B5D-BE0C-B0AFD88B2B65}.Debug|x86.ActiveCfg = Debug|x86
+		{17A0A29E-6CBF-4B5D-BE0C-B0AFD88B2B65}.Debug|Zune.ActiveCfg = Debug|x86
+		{17A0A29E-6CBF-4B5D-BE0C-B0AFD88B2B65}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{17A0A29E-6CBF-4B5D-BE0C-B0AFD88B2B65}.Release|x86.ActiveCfg = Release|x86
+		{17A0A29E-6CBF-4B5D-BE0C-B0AFD88B2B65}.Release|Zune.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

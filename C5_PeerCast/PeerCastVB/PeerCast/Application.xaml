@@ -1,0 +1,12 @@
+<Application x:Class="PeerCast.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="ChooseMode.xaml">
+    <Application.Resources>         
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="resources\C4fStyle.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    	</ResourceDictionary>         
+    </Application.Resources>
+</Application>

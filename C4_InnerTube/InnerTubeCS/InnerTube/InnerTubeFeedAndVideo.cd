@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SharedUtilities.InnerTubeFeed">
+    <Position X="3.25" Y="3" Width="3" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="InnerTubeFeed" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SharedUtilities.InnerTubeVideo">
+    <Position X="6.75" Y="0.5" Width="2.5" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="CompareTo" Hidden="true" />
+      <Method Name="InnerTubeVideo" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="SharedUtilities.InnerTubeTime">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

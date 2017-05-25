@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHSMailCommon", "WHSMailCommon\WHSMailCommon.csproj", "{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHSMailHost", "WHSMailHost\WHSMailHost.csproj", "{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHSMailWeb", "WHSMailWeb\WHSMailWeb.csproj", "{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Debug|x86.ActiveCfg = Debug|x86
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Debug|x86.Build.0 = Debug|x86
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Release|x86.ActiveCfg = Release|x86
+		{FB80B7C7-BDBB-40D4-9C0E-A4C5AE52C92E}.Release|x86.Build.0 = Release|x86
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Debug|x86.ActiveCfg = Debug|x86
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Debug|x86.Build.0 = Debug|x86
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Release|x86.ActiveCfg = Release|x86
+		{A896EBB7-1327-4E1D-BBD9-AFFE41D3FE49}.Release|x86.Build.0 = Release|x86
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Debug|x86.ActiveCfg = Debug|x86
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Debug|x86.Build.0 = Debug|x86
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Release|x86.ActiveCfg = Release|x86
+		{8F1DE683-D6FC-4C9B-81BA-B49C5BE98108}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

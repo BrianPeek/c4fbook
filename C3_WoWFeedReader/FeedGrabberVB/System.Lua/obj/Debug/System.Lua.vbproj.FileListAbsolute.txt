@@ -1,0 +1,5 @@
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\Warcraft\Final Dec 3\VB\System.Lua\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\Warcraft\Final Dec 3\VB\System.Lua\bin\Debug\System.Lua.dll
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\Warcraft\Final Dec 3\VB\System.Lua\bin\Debug\System.Lua.pdb
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\Warcraft\Final Dec 3\VB\System.Lua\obj\Debug\System.Lua.dll
+C:\Users\Dan\Desktop\Everything\Developer\C4F Book\Warcraft\Final Dec 3\VB\System.Lua\obj\Debug\System.Lua.pdb

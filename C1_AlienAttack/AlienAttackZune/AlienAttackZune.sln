@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienAttackZune", "AlienAttackZune.csproj", "{5EC5AC67-1780-4306-B9F3-39792CA98888}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Zune = Debug|Zune
+		Release|Zune = Release|Zune
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EC5AC67-1780-4306-B9F3-39792CA98888}.Debug|Zune.ActiveCfg = Debug|Zune
+		{5EC5AC67-1780-4306-B9F3-39792CA98888}.Debug|Zune.Build.0 = Debug|Zune
+		{5EC5AC67-1780-4306-B9F3-39792CA98888}.Debug|Zune.Deploy.0 = Debug|Zune
+		{5EC5AC67-1780-4306-B9F3-39792CA98888}.Release|Zune.ActiveCfg = Release|Zune
+		{5EC5AC67-1780-4306-B9F3-39792CA98888}.Release|Zune.Build.0 = Release|Zune
+		{5EC5AC67-1780-4306-B9F3-39792CA98888}.Release|Zune.Deploy.0 = Release|Zune
+		{5AE172E7-AE6D-453D-A7BF-75A149C9DAC5}.Debug|Zune.ActiveCfg = Debug|Zune
+		{5AE172E7-AE6D-453D-A7BF-75A149C9DAC5}.Release|Zune.ActiveCfg = Release|Zune
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

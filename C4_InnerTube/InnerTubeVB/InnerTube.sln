@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InnerTube", "InnerTube\InnerTube.vbproj", "{0C7144D1-368A-4059-BA74-6D251062ECE1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SharedUtilities", "SharedUtilities\SharedUtilities.vbproj", "{B0FD5A2E-AFFE-4C48-BBDD-0141C26C5BC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C7144D1-368A-4059-BA74-6D251062ECE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7144D1-368A-4059-BA74-6D251062ECE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7144D1-368A-4059-BA74-6D251062ECE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7144D1-368A-4059-BA74-6D251062ECE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FD5A2E-AFFE-4C48-BBDD-0141C26C5BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FD5A2E-AFFE-4C48-BBDD-0141C26C5BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FD5A2E-AFFE-4C48-BBDD-0141C26C5BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FD5A2E-AFFE-4C48-BBDD-0141C26C5BC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

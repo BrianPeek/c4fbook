@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>C4F_P2PCommon</name>
+    </assembly>
+    <members>
+        <member name="M:C4F.VistaP2P.Common.StreamingHttpListener.#ctor(System.String,C4F.VistaP2P.Common.StreamingHttpListener.WorkerThreadFinished,C4F.VistaP2P.Common.StreamingHttpListener.LogMessage,C4F.VistaP2P.Common.StreamingHttpListener.StartStream,C4F.VistaP2P.Common.StreamingHttpListener.SendStream)">
+            <summary>
+            Multiple threads are required in order to send and receive streamed data if the user interface is going to be responsive.
+            The best way I could seperate the visual content from the multiple threads required to send and receive streamed data was via the use
+            of delegates. I could have passed the classes in such as MainWindow or mP2P, however this would have greatly increased the dependencies.
+            By using delegates this class can stand on it's own without using MainWindow or mP2P.
+            </summary>
+            <param name="nodeName">This Node's name</param>
+            <param name="threadFinishedDelegate">The delegate to respond when the Thread has finished (this will only happen when it is canceled via </param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHttpListener.Quit">
+            <summary>
+            Call this when you want the thread to close. It will notify the caller when the thread has exited via the 
+            delegate passed in the constructor.
+            </summary>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHttpListener.PseudoHttpServer(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            The background thread that sets up the HttpListener so we can stream the incoming audio file to the MediaElement via
+            a local URL.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHttpListener.SafeHttpString(System.String)">
+            <summary>
+            This is a little helper function, to remove invalid characters in a http string.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="P:C4F.VistaP2P.Common.StreamingHttpListener.Sending">
+            <summary>
+            true if currently sending the stream. This needs to be set to false if the stream is canceled.
+            </summary>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHelper.ShareStream(C4F.VistaP2P.Common.StreamedPacket)">
+            <summary>
+            Implements the ShareStreamedAudio function specified in the IPeerChannel service contract above.
+            </summary>
+            <param name="mdp">the audio packet to send</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHelper.StartStream(System.String)">
+            <summary>
+            When sending an audio file, call this first to initialize the data.
+            </summary>
+            <param name="filename">The full path of the filename to open.</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHelper.CancelSendingStream">
+            <summary>
+            cancel sending the audio file.
+            </summary>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHelper.SendStream">
+            <summary>
+            This function actually sends a packet out. Continue to call this function until it returns true. 
+            </summary>
+            <returns>true when the entire file is sent</returns>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHelper.Watchdog(System.Object)">
+            <summary>
+            The callback setup in the constructor. This will get called once every n number of seconds(hard coded in the constructor)
+            If the numbers are the same, it means we didn't receive a packet inbetween calls.  Therefore we presume that the sending node
+            has either stopped sending, or we do not have a connection with them.
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.StreamingHelper.CopyStream(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            A helper function which copies data from one stream to another.
+            </summary>
+            <param name="instream">the stream to read from</param>
+            <param name="outstream">the stream to write to</param>
+        </member>
+        <member name="E:C4F.VistaP2P.Common.StreamingHelper.StreamChanged">
+            <summary>
+            The Audio event.
+            Read here for more details on events and delgates: http://www.akadia.com/services/dotnet_delegates_and_events.html
+            </summary>
+            <param name="e"></param>        
+        </member>
+        <member name="E:C4F.VistaP2P.Common.StreamingHelper.mReceiveTimeoutChanged">
+            <summary>
+            The timeout event.  After 500ms (a hard coded value set in the PeerChannelWrapper constructor)
+            without receiving a new packet, the audio stream assumes that the sending node has been lost.
+            anyone who is registered for the event AudioReceiveTimeoutHandler will also be notified.
+            </summary>        
+        </member>
+        <member name="T:C4F.VistaP2P.Common.Packet">
+            <summary>
+            The message contract is here in order to pass a stream in addition to other data.
+            By default the service contract requires that a Stream be the only parameter in an OperationsContract
+            </summary>
+        </member>
+        <member name="T:C4F.VistaP2P.Common.PictureChangedEventArgs">
+            <summary>
+            A simple class that just inherits from EventArgs so we can pass the data to any event listeners.
+            </summary>
+        </member>
+        <member name="T:C4F.VistaP2P.Common.StatusChangedEventArgs">
+            <summary>
+            A simple class that just inherits from EventArgs so we can pass the data to any event listeners.
+            </summary>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.PictureHelper.SendPicture">
+            <summary>
+            The function to call when sending a picture
+            </summary>
+            <param name="cp">fill the packet with the appropriate information and write the image to the stream</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.PictureHelper.SendPicture(System.String)">
+            <summary>
+            Make a call to this in order to send a picture.
+            </summary>
+            <param name="fullFileName"></param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.PictureHelper.SharePicture(C4F.VistaP2P.Common.PicturePacket)">
+            <summary>
+            Implements the Share Picture interface
+            </summary>
+            <param name="member"></param>
+        </member>
+        <member name="T:C4F.VistaP2P.Common.PictureHelper.OperationContractEventHandler">
+            The maximium size in bytes of a picture.
+            
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.PeerChannelWrapperStart(System.String,System.String,System.String)">
+            <summary>
+            The constructor for this.  In addition to initializing all of the parameters it attempts to open and connect
+            to the network.  This is done asynchronously with ProcessOpen being called either after a timeout (hard coded to 1 minute)
+            or when a response is received.
+            </summary>
+            <param name="nodeName">the unique nodename</param>
+            <param name="networkName">the name of the network</param>
+            <param name="password">the password for the network</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.ProcessOpen(System.IAsyncResult)">
+            <summary>
+            Async call back from beginning to open the graph. 
+            </summary>
+            <param name="result">the result returned</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.Finalize">
+            <summary>
+            Destructor...just call close to shut everything down and leave the network
+            </summary>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.Close">
+            <summary>
+            The actual function that closes the node if we were connected.
+            </summary>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.ShareStreamedVideo(C4F.VistaP2P.Common.StreamedPacket)">
+            <summary>
+            Implements the ShareStreamedVideo function specified in the IPeerChannel service contract above.
+            </summary>
+            <param name="mdp">the audio packet to send</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.ShareStreamedAudio(C4F.VistaP2P.Common.StreamedPacket)">
+            <summary>
+            Implements the ShareStreamedAudio function specified in the IPeerChannel service contract above.
+            </summary>
+            <param name="mdp">the audio packet to send</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.Join(System.String)">
+            <summary>
+            Implement the join interface.
+            Notify anyone that is registered for the 
+            
+            </summary>
+            <param name="member"></param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.Leave(System.String)">
+            <summary>
+            Implements the Leave interface
+            </summary>
+            <param name="member"></param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.P2PLib.IsOnline">
+            <summary>
+            
+            </summary>
+            <returns>returns true if any other node is also in the network</returns>
+        </member>
+        <member name="T:C4F.VistaP2P.Common.ChatHelper">
+            <summary>
+            This Class is set up to handle text messages in the peerchannel.
+            </summary>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.ChatHelper.SendTextMessage(System.String,System.String)">
+            <summary>
+            Call this function to send a text message
+            </summary>
+            <param name="message">the message to send</param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.ChatHelper.ShareChatMessage(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="member">the node name that is sending it</param>
+            <param name="msg">the message to send</param>
+        </member>
+        <member name="E:C4F.VistaP2P.Common.ChatHelper.mChatChanged">
+            <summary>
+            The event delegate pair. Subscribe to the Event TextChangedHandler if one is interested in the text. 
+            </summary>
+            <param name="s"></param>        
+        </member>
+        <member name="T:C4F.VistaP2P.Common.MetadataFileInfo">
+            <summary>
+            The purpose of this class is to retreive meta data associated with the file.  It does this primarily through a call to 
+            Shell32.Folder.GetFolderInfo.
+            </summary>
+        </member>
+        <member name="T:C4F.VistaP2P.Common.FileChangedEventArgs">
+            <summary>
+            This is the data that gets passed when a new class showed up.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:C4F.VistaP2P.Common.FileHelper" -->
+        <member name="M:C4F.VistaP2P.Common.FileHelper.SendFile(C4F.VistaP2P.Common.Packet)">
+            <summary>
+            call this to send a file
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="M:C4F.VistaP2P.Common.FileHelper.ShareFile(C4F.VistaP2P.Common.Packet)">
+            <summary>
+            notify anyone registered for this event.
+            </summary>
+            <param name="packet"></param>
+        </member>
+    </members>
+</doc>

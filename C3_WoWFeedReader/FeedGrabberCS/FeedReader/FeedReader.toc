@@ -1,0 +1,7 @@
+## Author: Coding4Fun
+## Interface: 30000
+## SavedVariables: FEED_READER_FEEDS
+## Title: World of Warcraft Feed Reader
+## Version: 1.0
+Frame.xml
+Slash.lua
